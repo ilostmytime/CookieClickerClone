@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/relativeLayout">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainGame"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="218dp"
+            android:layout_height="303dp"
+            android:id="@+id/cookieImg"
+            android:src="@drawable/gingerman"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:onClick="cookieClick" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Score: "
+            android:id="@+id/scoreTxt"
+            android:layout_gravity="left|top"
+            android:textSize="40dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:id="@+id/resetBtn"
+            android:layout_gravity="right|top"
+            android:onClick="resetClick" />
+
+        <Button
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:text="Store"
+            android:id="@+id/storeBtn"
+            android:layout_gravity="center_horizontal|bottom"
+            android:onClick="accessStore" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/mainGame"
+        android:layout_alignStart="@+id/mainGame"
+        android:layout_alignTop="@+id/mainGame"
+        android:id="@+id/store"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Increase clicks:"
+            android:id="@+id/optionTxt"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Auto clicks 1:"
+            android:id="@+id/option2Txt"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/option1Btn"
+            android:layout_alignLeft="@+id/optionTxt"
+            android:layout_alignStart="@+id/optionTxt" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100 score"
+            android:id="@+id/option1Btn"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_alignBaseline="@+id/optionTxt"
+            android:layout_alignBottom="@+id/optionTxt"
+            android:layout_toRightOf="@+id/optionTxt"
+            android:layout_toEndOf="@+id/optionTxt"
+            android:visibility="visible"
+            android:onClick="accessStore" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="150 score"
+            android:id="@+id/option2Btn"
+            android:layout_alignBaseline="@+id/option2Txt"
+            android:layout_alignBottom="@+id/option2Txt"
+            android:layout_alignLeft="@+id/option1Btn"
+            android:layout_alignStart="@+id/option1Btn"
+            android:clickable="false"
+            android:visibility="visible"
+            android:onClick="accessStore" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return to Game"
+            android:id="@+id/returnBtn"
+            android:layout_marginBottom="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="accessStore" />
+
+    </RelativeLayout>
+</RelativeLayout>
