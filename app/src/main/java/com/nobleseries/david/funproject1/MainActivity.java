@@ -1,6 +1,7 @@
 package com.nobleseries.david.funproject1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
@@ -59,49 +60,13 @@ public class MainActivity extends Activity {
 
         }
     public void accessStore(View v){
-      /*  final FrameLayout mainGame = (FrameLayout)findViewById(R.id.mainGame);
-        final RelativeLayout store = (RelativeLayout)findViewById(R.id.store);
-        final Button option1Btn = (Button)findViewById(R.id.option1Btn);
-        final Button option2Btn = (Button)findViewById(R.id.option2Btn);
-        final TextView scoreTxt = (TextView)findViewById(R.id.scoreTxt);
-
-
-
-        mainGame.setVisibility(View.GONE);
-        store.setVisibility(View.VISIBLE);
-        setStore();
-        final Button returnToGame = (Button)findViewById(R.id.returnBtn);
-        returnToGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainGame.setVisibility(View.VISIBLE);
-                store.setVisibility(View.GONE);
-
-            }
-        });
-        option2Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                score -= 150;
-                scoreTxt.setText("Score: " + score);
-
-            }
-        });
-        option1Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                score -=100;
-                scoreTxt.setText("Score: " + score);
-
-            }
-        });*/
         final Button storeBtn = (Button)findViewById(R.id.storeBtn);
         storeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new storeActivity();
-            }
+                Intent displayStore = new Intent(MainActivity.this, store_activity.class);
+                startActivity(displayStore);
+           }
         });
-
     }
 }
